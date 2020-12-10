@@ -214,6 +214,14 @@ export class App extends LitElement {
 
     return html`<div class="container">
       <h1>_Prtcl Token</h1>
+      <div>
+        address:
+        <a
+          href="https://blockscout.com/poa/xdai/address/0xEEB618686fb36F6B07b44b763B1A5C4267f0c5d7/transactions"
+          target="_blank"
+          >xdai // 0xEEB618686fb36F6B07b44b763B1A5C4267f0c5d7</a
+        >
+      </div>
       <p>
         The _Prtcl token is needed to use _Prtcl infrastructure. You need it if
         you want to update onchain content, register entries on the _Prtcl
