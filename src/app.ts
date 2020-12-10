@@ -197,7 +197,12 @@ export class App extends LitElement {
       this.approvedOk;
 
     return html`<div class="container">
-      <h1>UPR Credits</h1>
+      <h1>_Prtcl Token</h1>
+      <p>
+        The _Prtcl token is needed to use _Prtcl infrastructure. You need it if
+        you want to update onchain content, register entries on the _Prtcl
+        naming service or buy _Prtcl software licenses.
+      </p>
       <table class="table">
         <tr>
           <th class="">price</th>
@@ -354,6 +359,14 @@ export class App extends LitElement {
           align-items: center;
         }
 
+        p {
+          max-width: 300px;
+          padding: 22px;
+          background-color: #052852;
+          color: white;
+          border-radius: 6px;
+        }
+
         .input-and-label {
           display: flex;
           flex-direction: column;
@@ -377,7 +390,9 @@ export class App extends LitElement {
 
         td {
           padding: 8px;
-          background-color: rgba(0, 0, 0, 0.12);
+          background-color: #052852;
+          color: white;
+          border-radius: 3px;
         }
 
         .mg-top {
