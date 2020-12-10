@@ -48,6 +48,12 @@ export class App extends LitElement {
   @internalProperty()
   buying: boolean = false;
 
+  @internalProperty()
+  error: boolean = false;
+
+  @internalProperty()
+  errorMessage: string;
+
   @query("#amount-input")
   priceInput: any;
 
@@ -70,9 +76,6 @@ export class App extends LitElement {
     await this.refreshSupply();
 
     this.loading = false;
-    await this.updateComplete;
-
-    this.priceInput.focus();
   }
 
   async refreshSupply() {
@@ -96,9 +99,22 @@ export class App extends LitElement {
   async connect() {
     await window["ethereum"].enable();
     this.provider = new ethers.providers.Web3Provider(window["ethereum"]);
+
+    const network = await this.provider.getNetwork();
+    if (network.chainId !== 100) {
+      this.error = true;
+      this.errorMessage = "make sure you are connected to the xDAI chain";
+      return;
+    }
+
+    this.error = false;
+    this.errorMessage = "";
+
     this.signer = this.provider.getSigner();
     this.token = new ethers.Contract(CONTRACT_ADDRESS, abiUpr, this.signer);
     this.dai = new ethers.Contract(DAI_ADDRESS, abiDai, this.signer);
+
+    this.priceInput.focus();
 
     this.checkAccount();
     setInterval(() => this.checkAccount(), 2500);
@@ -250,6 +266,9 @@ export class App extends LitElement {
           />
         </div>
       </div>
+      ${this.error
+        ? html`<div class="error">error: ${this.errorMessage}</div>`
+        : ""}
       <div class="mg-top column">
         <div class="button-row">
           <mwc-button
@@ -418,6 +437,10 @@ export class App extends LitElement {
 
         .button-row mwc-button {
           width: 260px;
+        }
+
+        .error {
+          color: #aa1d1d;
         }
       `,
     ];
