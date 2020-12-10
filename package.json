@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@material/mwc-button": "^0.20.0",
+    "@material/mwc-circular-progress": "^0.20.0",
     "@vaadin/router": "^1.7.2",
     "@webcomponents/webcomponentsjs": "^2.5.0",
     "ethers": "^5.0.24",
