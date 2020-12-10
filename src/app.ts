@@ -367,15 +367,11 @@ export class App extends LitElement {
         }
 
         .container {
-          position: relative;
-          top: 0;
-          flex: 1 1 auto;
+          z-index: 10;
+          overflow: auto;
           width: 100%;
-          background-color: #fbfbfb;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
+          padding: 40px 0px 60px 20px;
+          max-width: 500px;
         }
 
         p {
@@ -384,6 +380,7 @@ export class App extends LitElement {
           background-color: #052852;
           color: white;
           border-radius: 6px;
+          line-height: 26px;
         }
 
         .input-and-label {
@@ -391,6 +388,13 @@ export class App extends LitElement {
           flex-direction: column;
           font-size: 12px;
           font-weight: bold;
+          width: 200px;
+        }
+
+        .input {
+          padding: 3px 12px;
+          margin-right: 6px;
+          height: 30px;
         }
 
         .amount {
@@ -416,12 +420,6 @@ export class App extends LitElement {
 
         .mg-top {
           margin-top: 24px;
-        }
-
-        .input {
-          padding: 3px 12px;
-          margin-right: 6px;
-          height: 30px;
         }
 
         .button-row {

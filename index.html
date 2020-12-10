@@ -21,10 +21,21 @@
         font-family: "Roboto", sans-serif;
         overflow: hidden;
       }
+
+      .background-image {
+        position: fixed;
+        bottom: -71px;
+        right: -67px;
+        z-index: 0;
+        width: 60vw;
+        max-width: 600px;
+        min-width: 400px;
+      }
     </style>
   </head>
 
   <body>
+    <img class="background-image" src="/img/home-bg.svg" />
     <upr-dapp></upr-dapp>
   </body>
 </html>
