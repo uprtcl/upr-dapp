@@ -707,7 +707,6 @@ limitations under the License.
               <input
                 disabled
                 class="input"
-                type="number"
                 value=${s.utils.commify(s.utils.formatEther(this.uprBalance))}
               />
             </div>`:""}
