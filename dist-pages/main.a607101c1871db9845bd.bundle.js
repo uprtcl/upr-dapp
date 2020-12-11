@@ -735,7 +735,7 @@ limitations under the License.
 
         /* width */
         ::-webkit-scrollbar {
-          width: 5px;
+          width: 10px;
         }
 
         /* Track */
@@ -745,13 +745,13 @@ limitations under the License.
 
         /* Handle */
         ::-webkit-scrollbar-thumb {
-          background: #5981a7;
-          border-radius: 3px;
+          background: #5981a716;
+          border-radius: 5px;
         }
 
         /* Handle on hover */
         ::-webkit-scrollbar-thumb:hover {
-          background: #555;
+          background: #5981a740;
         }
 
         .info-box {
