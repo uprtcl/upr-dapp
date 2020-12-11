@@ -213,23 +213,44 @@ export class App extends LitElement {
       this.approvedOk;
 
     return html`<div class="container">
-      <h1>_Prtcl Token</h1>
+      <h1>_Prtcl Token (UPR)</h1>
       <div>
-        address:
         <a
           href="https://blockscout.com/poa/xdai/address/0xEEB618686fb36F6B07b44b763B1A5C4267f0c5d7/transactions"
           target="_blank"
           >xdai // 0xEEB618686fb36F6B07b44b763B1A5C4267f0c5d7</a
         >
       </div>
-      <p>
-        The _Prtcl token is needed to use _Prtcl infrastructure. You need it if
-        you want to update onchain content, register entries on the _Prtcl
-        naming service or buy _Prtcl software licenses.
-      </p>
+      <div class="info-box">
+        UPR can be used to
+        <ul>
+          <li>pay fees to update onchain content.</li>
+          <li>register entries on the _Prtcl naming service.</li>
+          <li>buy _Prtcl software licenses.</li>
+        </ul>
+      </div>
+      <div class="info-box">
+        You need xDAI to buy UPR. This is how you get xDAI:
+        <ul>
+          <li>
+            Move DAI to xDAI using the
+            <a target="_blank" href="https://bridge.xdaichain.com/"
+              >token bridge</a
+            >.
+          </li>
+          <li>
+            <a
+              target="_blank"
+              href="https://www.xdaichain.com/for-users/wallets/metamask/metamask-setup"
+              >connect Metamask</a
+            >
+            to the xDAI chain.
+          </li>
+        </ul>
+      </div>
       <table class="table">
         <tr>
-          <th class="">price</th>
+          <th class="">UPR price</th>
           <th class="">available</th>
         </tr>
         <tr>
@@ -346,7 +367,7 @@ export class App extends LitElement {
         </div>
         ${this.signer !== undefined
           ? html`<div class="input-and-label">
-              <label>UPR balance</label>
+              <label>Your UPR balance</label>
               <input
                 disabled
                 class="input"
@@ -378,17 +399,47 @@ export class App extends LitElement {
           z-index: 10;
           overflow: auto;
           width: 100%;
-          padding: 40px 0px 60px 20px;
-          max-width: 500px;
+          padding: 40px 20px 60px 20px;
+          max-width: 450px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
         }
 
-        p {
+        /* width */
+        ::-webkit-scrollbar {
+          width: 5px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+          background: #ffffff00;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+          background: #5981a7;
+          border-radius: 3px;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+          background: #555;
+        }
+
+        .info-box {
+          width: 100%;
           max-width: 300px;
           padding: 22px;
           background-color: #052852;
-          color: white;
+          color: #eef5fc;
           border-radius: 6px;
-          line-height: 26px;
+          margin: 13px 0px;
+          font-size: 14px;
+        }
+
+        .info-box a {
+          color: #9dbbdd;
         }
 
         .input-and-label {
