@@ -371,7 +371,6 @@ export class App extends LitElement {
               <input
                 disabled
                 class="input"
-                type="number"
                 value=${ethers.utils.commify(
                   ethers.utils.formatEther(this.uprBalance)
                 )}
